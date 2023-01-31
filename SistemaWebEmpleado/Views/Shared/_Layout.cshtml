@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="header">
+        <h1>SISTEMA Empleados</h1>
+    </div>
+    <div id="menu">
+        @Html.ActionLink("Home","Index","Home")
+        @Html.ActionLink("Empleados","Index","Empleado")
+    </div>
+    <div id="sidebaruno">
+       <p>BIENVENIDO</p>
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>
+
+    <div id="footer">
+        <p>info@DispMedicos.com</p>
+    </div>
+   
+</body>
+</html>
