@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SistemaWebEmpleado.Data;
 using SistemaWebEmpleado.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SistemaWebEmpleado.Controllers
@@ -70,6 +71,16 @@ namespace SistemaWebEmpleado.Controllers
         //    }
 
         //}
+
+        //GET /empleado/titulo
+        [HttpGet("{titulo}")]
+        public ActionResult<IEnumerable<Empleado>> DetailsTitulo(string titulo)
+        {
+            var empleado = (from a in context.Empleados
+                            where a.Titulo == titulo
+                            select a).ToList();
+            return View("DetailsTitulo", empleado);
+        }
 
 
         [HttpGet]

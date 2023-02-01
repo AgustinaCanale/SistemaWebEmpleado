@@ -11,14 +11,25 @@
         <h1>SISTEMA Empleados</h1>
     </div>
     <div id="menu">
+        <div class="nav">
         @Html.ActionLink("Home","Index","Home")
-        @Html.ActionLink("Empleados","Index","Empleado")
+        @Html.ActionLink("Ir a Empleados", "Index", "Empleado")
+        </div>
     </div>
     <div id="sidebaruno">
-       <p>BIENVENIDO</p>
+        @if (IsSectionDefined("SideBar"))
+        {
+            @RenderSection("SideBar")
+        }
+        else
+        {
+                <h2> </h2>
+        }
+
     </div>
     <div id="content">
         @RenderBody()
+      
     </div>
 
     <div id="footer">

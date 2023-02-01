@@ -34,10 +34,18 @@
                     @Html.ActionLink("Eliminar", "Delete", "Empleado", new{id = item.Id})
                     @Html.ActionLink("Editar", "Edit", "Empleado", new{id = item.Id})
                     @Html.ActionLink("Detalle", "Detalle", "Empleado", new{id = item.Id})
+                    @Html.ActionLink("DetalleTitulo", "DetailsTitulo", "Empleado", new{titulo = item.Titulo})
                 </td>
             </tr>
-
+           
         }
     </table>
+
+    @section SideBar{
+
+
+            <h1>Administracion de empleados</h1>
+
+    }
 </body>
 </html>
